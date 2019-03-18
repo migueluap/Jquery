@@ -28,7 +28,7 @@ function collapsible() {
   
   $('.accordion').find('.accordion-header').click(function () {
     var isVisibleBody = $(this).next().is(':visible');
-    var nivel = parseInt($(this).parent().attr('nivel'));
+    var nivel = parseInt($(this).parent().parent().attr('nivel'));
     var hasChildren = ($(this).next().find('.accordion').length >= 1) ? true : false;
 
     if (isVisibleBody) {
@@ -39,8 +39,8 @@ function collapsible() {
       $(this).next().slideDown('slow');
 
       if (DATA.config.isCompressed){
-        $(this).next().siblings('.accordion-body').slideUp('slow');
-        $(this).next().siblings('.accordion-header').find('.icone').attr('src', DATA.icons[nivel].toOpen);
+        $(this).parent().siblings().children('.accordion-body').slideUp('slow');
+        $(this).parent().siblings().children('.accordion-header').find('.icone').attr('src', DATA.icons[nivel].toOpen);
       }
 
       $(this).find('.icone').attr('src', DATA.icons[nivel].toClose);
