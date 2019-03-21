@@ -24,4 +24,8 @@
     overflow: hidden;
   }
 
+  .color-method {
+    color: blue;
+    cursor: pointer;
+}
   

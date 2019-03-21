@@ -35,6 +35,7 @@ function collapsible() {
       $(this).next().slideUp('slow');
       $(this).next().find('.accordion-body').slideUp('slow');
       $(this).find('.icone').attr('src', DATA.icons[nivel].toOpen);
+      $(this).find('div > span > b').removeClass('color-method');
     } else {
       $(this).next().slideDown('slow');
 
@@ -47,6 +48,11 @@ function collapsible() {
 
       if (hasChildren)
         $(this).next().children().find('.icone').attr('src', DATA.icons[nivel + 1].toOpen);
+      
+      if (nivel ===0) { 
+        $(this).parent().siblings().find('.color-method').removeClass('color-method');
+        $(this).find('div > span > b').addClass('color-method');
+      }
     }
   });
 };
