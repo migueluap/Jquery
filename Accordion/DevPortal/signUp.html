@@ -1,0 +1,204 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <!-- mobile specific meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header-all">
+        <div class="background-menu">
+            <div class="content-top">
+                <img src="http://eval589593.mashery.com/files/logoGsat.png" class="logo">
+                <nav id="menu-responsivo">
+                    <a href="#" class="slide-menu-open"><img
+                            src="http://eval589593.mashery.com/files/menu-icon.png"></a>
+                    <div class="side-menu-overlay"></div>
+                    <div class="side-menu-wrapper">
+                        <a href="#" class="menu-close">&times;</a>
+                        <div>
+                            <a>APIs</a><br>
+                            <a>INTERACTIVE API</a><br>
+                            <a>DOCS</a><br>
+                            <a>SHOWCASE</a><br>
+                            <a></a><br>
+                            <a>SIGN IN</a><br>
+                            <a>SIGN UP</a><br>
+                        </div>
+                    </div>
+                </nav>
+                <nav id="menu-desktop" class="menu">
+                    <a>APIs</a>
+                    <a>INTERACTIVE API</a>
+                    <a>DOCS</a>
+                    <a>SHOWCASE</a>
+                    <a id="Busca" onclick="showSearch();"><img id="imgBusca"
+                            src="http://eval589593.mashery.com/files/buscar.png" class="buscar-icon">
+                    </a>
+                    <span>|</span>
+                    <a>SIGN IN</a>
+                    <a class="signup-button">SIGN UP</a>
+                </nav>
+            </div>
+            <div class="backgroundMenu"></div>
+        </div>
+
+        <div id="box-search" class="overlay">
+            <a class="closebtn" onclick="hideSearch()">&times;</a>
+            <div class="content-search">
+                <input type="text" class="input-search" id="teste"
+                    placeholder="Search fo API, Docs, Cases and Others...">
+                <button class="button-search">SEARCH</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="content-pages">
+        <div class="low-pages">
+            <div class="breadcrumb">
+                <a href="">Home</a> / <a href="" class="active">Sign Up</a>
+            </div>
+            <div class="description-sigUp">
+                <h2>Sign Up</h2>
+                <p>Sign In and access developers.globosat.com <br>Or <a href="" class="access-signIn">Sign In with
+                        SSO</a>
+                </p>
+            </div>
+            <div class="signUp-access">
+                <div class="signUp-lines">
+                    <div>
+                        <label>Username</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>Display Name</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="signUp-lines">
+                    <div>
+                        <label>Company Name</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>Relationship With Globosat</label>
+                        <select>
+                            <option value="partner">Partner</option>
+                            <option value="partner">Partner</option>
+                            <option value="partner">Partner</option>
+                            <option value="partner">Partner</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="signUp-lines">
+                    <div>
+                        <label>Job Departament</label>
+                        <select>
+                            <option value="partner">Partner</option>
+                            <option value="partner">Partner</option>
+                            <option value="partner">Partner</option>
+                            <option value="partner">Partner</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Company's Industry</label>
+                        <select>
+                            <option value="partner">Partner</option>
+                            <option value="partner">Partner</option>
+                            <option value="partner">Partner</option>
+                            <option value="partner">Partner</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="signUp-lines">
+                    <div class="signUp-email">
+                        <label>E-mail</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="signUp-lines">
+                    <div>
+                        <label>Password</label>
+                        <input type="password">
+                    </div>
+                    <div class="signUp-pass">
+                        <label>Repeat Password</label>
+                        <input type="password">
+                    </div>
+                    <img src="http://eval589593.mashery.com/files/loading.gif" class="loading-signUp">
+                </div>
+                <p class="signUp-legend"><i>Requirements: At least one later / At least one number / At least 8
+                        character</i></p>
+                <div class="position-button-signUp">
+                    <input type="button" class="button-signIn" value="Sign Up">
+                </div>
+                <div class="terms-signup">
+                    <p><i>By clicking the "Register Button", I certify that I read and agree to the Mashary <a
+                                href="">Terms od Service</a> and <a href="">Privacy Policy</a></i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-menu">
+            <div class="content-footer">
+                <img src="http://eval589593.mashery.com/files/logoGsaFooter.png">
+                <div class="footer-links">
+                    <a>TERMS</a>
+                    <a>PRIVACY</a>
+                    <a>FAQ</a>
+                    <a>CONTACT US</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-reserved">
+            <p><i>2008. All Rights Reserved.</i></p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+        /* script button search menu */
+
+        function showSearch() {
+            $("#box-search").css("height", "250px");
+            $("#imgBusca").attr('src', 'http://eval589593.mashery.com/files/buscar-blue.png');
+            $("#imgBusca").css("cursor", "context-menu");
+        }
+
+        function hideSearch() {
+            $("#box-search").css("height", "0%");
+            $("#imgBusca").attr('src', 'http://eval589593.mashery.com/files/buscar.png');
+            $("#imgBusca").css('cursor', 'pointer');
+        }
+
+        /* scriptmenu responsive */
+
+        var slidebar_width = 370; //slidebar width + padding size
+        var slide_bar = $(".side-menu-wrapper"); //slidebar
+        var slide_open_btn = $(".slide-menu-open"); //slidebar close btn
+        var slide_close_btn = $(".menu-close"); //slidebar close btn
+        var overlay = $(".side-menu-overlay"); //slidebar close btn
+
+        slide_open_btn.click(function (e) {
+            e.preventDefault();
+            slide_bar.css({ "left": "0px" }); //change to "right" for right positioned menu
+            overlay.css({ "opacity": "1", "width": "100%" });
+            $(".backgroundMenu").fadeIn(500);
+        });
+
+        slide_close_btn.click(function (e) {
+            e.preventDefault();
+            slide_bar.css({ "left": "-" + slidebar_width + "px" }); //change to "right" for right positioned menu
+            overlay.css({ "opacity": "0", "width": "0" });
+            $(".backgroundMenu").fadeOut(500);
+        });
+
+
+    </script>
+</body>
+
+</html>

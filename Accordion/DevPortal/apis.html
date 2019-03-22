@@ -1,0 +1,131 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+
+<body>
+    <div class="header-all">
+        <div style="background-color: black;position: relative;">
+            <div class="content-top">
+                <img src="http://eval589593.mashery.com/files/logoGsat.png" class="logo">
+                <nav id="menu-responsivo">
+                    <a href="#" class="slide-menu-open"><img
+                            src="http://eval589593.mashery.com/files/menu-icon.png"></a>
+                    <div class="side-menu-overlay"></div>
+                    <div class="side-menu-wrapper">
+                        <a href="#" class="menu-close">&times;</a>
+                        <div style="margin-top: 50px!important;">
+                            <a>APIs</a><br>
+                            <a>INTERACTIVE API</a><br>
+                            <a>DOCS</a><br>
+                            <a>SHOWCASE</a><br>
+                            <a></a><br>
+                            <a>SIGN IN</a><br>
+                            <a>SIGN UP</a><br>
+                        </div>
+                    </div>
+                </nav>
+                <nav id="menu-desktop" class="menu">
+                    <a>APIs</a>
+                    <a>INTERACTIVE API</a>
+                    <a>DOCS</a>
+                    <a>SHOWCASE</a>
+                    <a><img src="http://eval589593.mashery.com/files/buscar.png" class="buscar-icon"></a>
+                    <span>|</span>
+                    <a>SIGN IN</a>
+                    <a class="signup-button">SIGN UP</a>
+                </nav>
+            </div>
+        </div>
+        <!--
+        <div class="box-search">
+            <a href=""><img src="closes.png"></a>
+            <div class="content-search">
+                <input type="text" class="input-search">
+                <button class="button-search">SEARCH</button>
+            </div>
+        </div>
+        -->
+
+    </div>
+    <div class="breadcrumb">
+        <a href="">Home</a> / <a href="" class="active">Privacy</a>
+    </div>
+
+    <section class="content-pages">
+        <h2>APIs</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur elit ac ligula mattis
+            fermentum. Nunc pulvinar mi nulla, ut scelerisque ex lacinia at. Sed feugiat, sapien ac blandit aliquam.</p>          
+
+    </section>
+    <footer>
+        <div class="footer-menu">
+            <div class="content-footer">
+                <img src="http://eval589593.mashery.com/files/logoGsaFooter.png">
+                <div class="footer-links">
+                    <a>TERMS</a>
+                    <a>PRIVACY</a>
+                    <a>FAQ</a>
+                    <a>CONTACT US</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-reserved">
+            <p><i>2008. All Rights Reserved.</i></p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+        var titulo = document.getElementById('titlePage');
+        reescreverTitulo(titulo);
+        setInterval(function () {
+            reescreverTitulo(titulo);
+        }, 7000);
+
+        function reescreverTitulo(elemento) {
+            const textoArray = elemento.innerHTML.split('');
+            elemento.innerHTML = '';
+            textoArray.forEach((letra, i) => {
+                setTimeout(() => elemento.innerHTML += letra, 75 * i);
+            });
+        }
+
+        var slidebar_width = 290; //slidebar width + padding size
+        var slide_bar = $(".side-menu-wrapper"); //slidebar
+        var slide_open_btn = $(".slide-menu-open"); //slidebar close btn
+        var slide_close_btn = $(".menu-close"); //slidebar close btn
+        var overlay = $(".side-menu-overlay"); //slidebar close btn
+        var slide_close_link = $(".side-menu-wrapper ul li a");
+
+        slide_open_btn.click(function (e) {
+            e.preventDefault();
+            slide_bar.css({ "left": "0px" }); //change to "right" for right positioned menu
+            overlay.css({ "opacity": "1", "width": "100%" });
+        });
+        slide_close_btn.click(function (e) {
+            e.preventDefault();
+            slide_bar.css({ "left": "-" + slidebar_width + "px" }); //change to "right" for right positioned menu
+            overlay.css({ "opacity": "0", "width": "0" });
+        });
+        slide_close_link.click(function (e) {
+            e.preventDefault();
+            slide_bar.css({ "left": "-" + slidebar_width + "px" }); //change to "right" for right positioned menu
+            overlay.css({ "opacity": "0", "width": "0" });
+        });
+
+        var $doc = $('html, body');
+        $('#scrollSuave').click(function () {
+            $doc.animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 500);
+            return false;
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<ul class="accordion">
+
+    <li>
+        <a class="toggle" href="javascript:void(0);">Item 1</a>
+        <ul class="inner">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+        </ul>
+    </li>
+
+    <li>
+        <a class="toggle" href="javascript:void(0);">Item 2</a>
+        <ul class="inner">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+        </ul>
+    </li>
+
+    <li>
+        <a class="toggle" href="javascript:void(0);">Item 3</a>
+        <ul class="inner">
+            <li>
+                <a href="#" class="toggle">Open Inner</a>
+                <div class="inner">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus placerat fringilla.
+                        Duis a elit
+                        et dolor laoreet volutpat. Aliquam ultrices mauris id mattis imperdiet. Aenean cursus ultrices
+                        justo et
+                        varius. Suspendisse aliquam orci id dui dapibus
+                        blandit. In hac habitasse platea dictumst. Sed risus velit, pellentesque eu enim ac, ultricies
+                        pretium
+                        felis.
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <a href="#" class="toggle">Open Inner 2</a>
+                <div class="inner">
+                    <p>
+                        Children will automatically close upon closing its parent.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a class="toggle" href="javascript:void(0);">Item 4</a>
+        <ul class="inner">
+            <li>
+                <a href="#" class="toggle">Open Inner</a>
+                <div class="inner">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus placerat fringilla.
+                        Duis a elit
+                        et dolor laoreet volutpat. Aliquam ultrices mauris id mattis imperdiet. Aenean cursus ultrices
+                        justo et
+                        varius. Suspendisse aliquam orci id dui dapibus
+                        blandit. In hac habitasse platea dictumst. Sed risus velit, pellentesque eu enim ac, ultricies
+                        pretium
+                        felis.
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <a href="#" class="toggle">Open Inner</a>
+                <div class="inner">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus placerat fringilla.
+                        Duis a elit
+                        et dolor laoreet volutpat. Aliquam ultrices mauris id mattis imperdiet. Aenean cursus ultrices
+                        justo et
+                        varius. Suspendisse aliquam orci id dui dapibus
+                        blandit. In hac habitasse platea dictumst. Sed risus velit, pellentesque eu enim ac, ultricies
+                        pretium
+                        felis.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="toggle">Open Inner</a>
+                <div class="inner">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus placerat fringilla.
+                        Duis a elit
+                        et dolor laoreet volutpat. Aliquam ultrices mauris id mattis imperdiet. Aenean cursus ultrices
+                        justo et
+                        varius. Suspendisse aliquam orci id dui dapibus
+                        blandit. In hac habitasse platea dictumst. Sed risus velit, pellentesque eu enim ac, ultricies
+                        pretium
+                        felis.
+                    </p>
+                </div>
+            </li>
+
+
+
+        </ul>
+    </li>
+</ul>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+
+<!-- <script src="js/index.js"></script> -->
+
+<script>
+    $('.toggle').click(function (e) {
+        e.preventDefault();
+
+        var $this = $(this);
+
+        if ($this.next().hasClass('show')) {
+            $this.next().removeClass('show');
+            $this.next().slideUp(350);
+            $this.parent().parent().find('.toggle').removeClass('activeItem');
+            // $this.removeClass("activeItem");
+        } else {
+            $this.parent().parent().parent().find('.toggle').removeClass('activeItem');
+            $this.parent().parent().find('li .inner').removeClass('show');
+            $this.parent().parent().find('li .inner').slideUp(350);
+            $this.next().toggleClass('show');
+            $this.next().slideToggle(350);
+            $this.toggleClass("activeItem");
+        }
+    });
+</script>
+
+<style>
+    h1 {
+        font-family: 'Pacifico', cursive;
+        font-weight: 400;
+        font-size: 2.5em;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul .inner {
+        padding-left: 1em;
+        overflow: hidden;
+        display: none;
+    }
+
+    ul li {
+        margin: 0.5em 0;
+    }
+
+    ul li a.toggle {
+        width: 100%;
+        display: block;
+        background: blue;
+        color: #fefefe;
+        padding: 0.75em;
+        border-radius: 0.15em;
+        transition: background 0.3s ease;
+    }
+
+    ul li a.toggle:hover {
+        background: green;
+    }
+
+    .toggle:after {
+        content: '\002B';
+        color: red;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .activeItem:after {
+        content: "\2212";
+        color: red;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+</style>

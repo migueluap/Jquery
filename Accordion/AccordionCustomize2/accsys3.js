@@ -40,7 +40,7 @@ function collapsible() {
       $(this).next().slideDown('slow');
 
       if (DATA.config.isCompressed){
-        $(this).parent().siblings().children('.accordion-body').slideUp('slow');
+        $(this).parent().siblings().find('.accordion-body').slideUp('slow');
         $(this).parent().siblings().children('.accordion-header').find('.icone').attr('src', DATA.icons[nivel].toOpen);
       }
 
