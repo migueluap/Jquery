@@ -265,7 +265,12 @@
                     $(this).next().find('.accordion-body').slideUp('slow');
                     $(this).find('.icone').attr('src', DATA.icons[nivel].toOpen);
                     $(this).find('div > span > b').removeClass('color-docs');
-                    $(this).next().find('.accordion-header').find('.color-docs').removeClass('color-docs');
+                    
+                    if (nivel === 0){
+                     $(this).next().find('.accordion-header').find('.color-docs').removeClass('color-docs');
+                     $(this).next().find('.accordion-header').find('.icone').attr('src', DATA.icons[nivel].toClose);
+                    }   
+                    
                 } else {
                     $(this).next().slideDown('slow');
 
