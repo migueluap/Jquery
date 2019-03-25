@@ -86,7 +86,7 @@
                         </div>
                         <img src="http://eval589593.mashery.com/files/arrow-down.png" class="icone">
                     </div>
-                    <div class="accordion-body">
+                    <div class="accordion-body acc-method">
                         <!-- acc son -->
                         <div class="accordion acc-son" nivel="1">
                             <div class="accordion-section">
@@ -142,7 +142,7 @@
                         </div>
                         <img src="http://eval589593.mashery.com/files/arrow-down.png" class="icone">
                     </div>
-                    <div class="accordion-body">
+                    <div class="accordion-body acc-method">
                         <!-- acc son -->
                         <div class="accordion acc-son" nivel="1">
                             <div class="accordion-section">
@@ -198,64 +198,7 @@
                         </div>
                         <img src="http://eval589593.mashery.com/files/arrow-down.png" class="icone">
                     </div>
-                    <div class="accordion-body">
-                        <!-- acc son -->
-                        <div class="accordion acc-son" nivel="1">
-                            <div class="accordion-section">
-                                <div class="accordion-header">
-                                    <div class="api-method api-get">
-                                        <span>Get</span><span>&nbsp;&nbsp; / Method</span>
-                                    </div>
-                                    <img src="" class="icone">
-                                </div>
-                                <div class="accordion-body">
-                                    <div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-section">
-                                <div class="accordion-header">
-                                    <div class="api-method api-put">
-                                        <span>Put</span><span>&nbsp;&nbsp; / Method</span>
-                                    </div>
-                                    <img src="" class="icone">
-                                </div>
-                                <div class="accordion-body">
-                                    <div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-section">
-                                <div class="accordion-header">
-                                    <div class="api-method api-post">
-                                        <span>Post</span><span>&nbsp;&nbsp; / Method</span>
-                                    </div>
-                                    <img src="" class="icone">
-                                </div>
-                                <div class="accordion-body">
-                                    <div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="accordion-section">
-                    <div class="accordion-header">
-                        <div>
-                            <span><b>Section 1</b></span>
-                            <span> / Small Description About Method</span>
-                        </div>
-                        <img src="http://eval589593.mashery.com/files/arrow-down.png" class="icone">
-                    </div>
-                    <div class="accordion-body">
+                    <div class="accordion-body acc-method">
                         <!-- acc son -->
                         <div class="accordion acc-son" nivel="1">
                             <div class="accordion-section">
@@ -312,7 +255,7 @@
                         </div>
                         <img src="http://eval589593.mashery.com/files/arrow-down.png" class="icone">
                     </div>
-                    <div class="accordion-body">
+                    <div class="accordion-body acc-method">
                         <!-- acc son -->
                         <div class="accordion acc-son" nivel="1">
                             <div class="accordion-section">
@@ -369,7 +312,64 @@
                         </div>
                         <img src="http://eval589593.mashery.com/files/arrow-down.png" class="icone">
                     </div>
-                    <div class="accordion-body">
+                    <div class="accordion-body acc-method">
+                        <!-- acc son -->
+                        <div class="accordion acc-son" nivel="1">
+                            <div class="accordion-section">
+                                <div class="accordion-header">
+                                    <div class="api-method api-get">
+                                        <span>Get</span><span>&nbsp;&nbsp; / Method</span>
+                                    </div>
+                                    <img src="" class="icone">
+                                </div>
+                                <div class="accordion-body">
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-section">
+                                <div class="accordion-header">
+                                    <div class="api-method api-put">
+                                        <span>Put</span><span>&nbsp;&nbsp; / Method</span>
+                                    </div>
+                                    <img src="" class="icone">
+                                </div>
+                                <div class="accordion-body">
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-section">
+                                <div class="accordion-header">
+                                    <div class="api-method api-post">
+                                        <span>Post</span><span>&nbsp;&nbsp; / Method</span>
+                                    </div>
+                                    <img src="" class="icone">
+                                </div>
+                                <div class="accordion-body">
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="accordion-section">
+                    <div class="accordion-header">
+                        <div>
+                            <span><b>Section 1</b></span>
+                            <span> / Small Description About Method</span>
+                        </div>
+                        <img src="http://eval589593.mashery.com/files/arrow-down.png" class="icone">
+                    </div>
+                    <div class="accordion-body acc-method">
                         <!-- acc son -->
                         <div class="accordion acc-son" nivel="1">
                             <div class="accordion-section">
@@ -473,12 +473,10 @@
 
         function collapsible() {
             $("[nivel='0']").find('.accordion-header').find('.icone').attr('src', DATA.icons[0].toOpen);
-
             $('.accordion').find('.accordion-header').click(function () {
                 var isVisibleBody = $(this).next().is(':visible');
                 var nivel = parseInt($(this).parent().parent().attr('nivel'));
                 var hasChildren = ($(this).next().find('.accordion').length >= 1) ? true : false;
-
                 if (isVisibleBody) {
                     $(this).next().slideUp('slow');
                     $(this).next().find('.accordion-body').slideUp('slow');
@@ -486,17 +484,13 @@
                     $(this).find('div > span > b').removeClass('color-method');
                 } else {
                     $(this).next().slideDown('slow');
-
                     if (DATA.config.isCompressed) {
                         $(this).parent().siblings().find('.accordion-body').slideUp('slow');
                         $(this).parent().siblings().children('.accordion-header').find('.icone').attr('src', DATA.icons[nivel].toOpen);
                     }
-
                     $(this).find('.icone').attr('src', DATA.icons[nivel].toClose);
-
                     if (hasChildren)
                         $(this).next().children().find('.icone').attr('src', DATA.icons[nivel + 1].toOpen);
-
                     if (nivel === 0) {
                         $(this).parent().siblings().find('.color-method').removeClass('color-method');
                         $(this).find('div > span > b').addClass('color-method');
