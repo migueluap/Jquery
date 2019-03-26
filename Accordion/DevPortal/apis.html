@@ -26,7 +26,7 @@
                             <a>INTERACTIVE API</a><br>
                             <a>DOCS</a><br>
                             <a>SHOWCASE</a><br>
-                            <a id="Busca" onclick="showSearch();">BUSCAR</a><br>
+                            <a class="Busca">BUSCAR</a><br>
                             <a>SIGN IN</a><br>
                             <a class="signUp-color">SIGN UP</a><br>
                         </div>
@@ -40,7 +40,7 @@
                     <a>INTERACTIVE API</a>
                     <a>DOCS</a>
                     <a>SHOWCASE</a>
-                    <a id="Busca" onclick="showSearch();"><img id="imgBusca" src="buscar.png" class="buscar-icon"></a>
+                    <a class="Busca"><img id="imgBusca" src="buscar.png" class="buscar-icon"></a>                    
                     <span>|</span>
                     <a>SIGN IN</a>
                     <a class="signup-button">SIGN UP</a>
@@ -49,18 +49,9 @@
             <div class="backgroundMenu"></div>
         </div>
 
-        <div id="box-search" class="overlay">
-            <a class="closebtn" onclick="hideSearch()">&times;</a>
-            <div class="content-search">
-                <input type="text" class="input-search" id="teste"
-                    placeholder="Search fo API, Docs, Cases and Others...">
-                <button class="button-search">SEARCH</button>
-            </div>
-        </div>
-    </div>
 
     <div id="box-search" class="overlay">
-        <a class="closebtn" onclick="hideSearch()">&times;</a>
+        <a class="closebtn">&times;</a>
         <div class="content-search">
             <input type="text" class="input-search" placeholder="Search fo API, Docs, Cases and Others...">
             <button class="button-search">SEARCH</button>
@@ -342,12 +333,14 @@
 
         /* script button search menu */
         function showSearch() {
+            debugger;
             $("#box-search").css("height", "250px");
             $("#imgBusca").attr('src', 'buscar-blue.png');
             $(".side-menu-wrapper").hide();
             /*$(".backgroundMenu").fadeOut(500);*/
         }
         function hideSearch() {
+            debugger;
             $("#box-search").css("height", "0%");
             $("#imgBusca").attr('src', 'buscar.png');
             $("#imgBusca").css('cursor', 'pointer');
@@ -361,6 +354,9 @@
         var slide_open_btn = $(".slide-menu-open"); //slidebar close btn
         var slide_close_btn = $(".menu-close"); //slidebar close btn
         var overlay = $(".side-menu-overlay"); //slidebar close btn
+        var text_search = $(".busca"); //
+        var search_close_btn = $(".closebtn"); //
+        
         slide_open_btn.click(function (e) {
             e.preventDefault();
             slide_bar.css({
@@ -384,6 +380,39 @@
                 "opacity": "0",
                 "width": "0"
             });
+            $(".backgroundMenu").fadeOut(500);
+        });
+
+        text_search.click(function (e) {
+            e.preventDefault();
+            slide_bar.css({
+                "left": "-" + slidebar_width + "px"
+            }); //change to "right" for right positioned menu
+            overlay.css({
+                "opacity": "0",
+                "width": "0"
+            });
+
+            $("#box-search").css("height", "250px");
+            $("#imgBusca").attr('src', 'buscar-blue.png');
+            $(".backgroundMenu").fadeOut(500);
+        });
+
+        search_close_btn.click(function (e) {
+            e.preventDefault();
+            
+            slide_bar.css({
+                "left": "-" + slidebar_width + "px"
+            }); //change to "right" for right positioned menu
+            overlay.css({
+                "opacity": "0",
+                "width": "0"
+            });
+
+            $("#box-search").css("height", "0%");
+            $("#imgBusca").attr('src', 'buscar.png');
+            $("#imgBusca").css('cursor', 'pointer');
+            
             $(".backgroundMenu").fadeOut(500);
         });
 
